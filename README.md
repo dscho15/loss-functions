@@ -13,6 +13,10 @@ This project introduces a generalized loss function designed to encompass a broa
 
 Each of these functions has been widely adopted for tasks where balancing sensitivity to outliers and numerical stability is critical. By using our generalized formulation, you gain the flexibility to adjust parameters to match or closely approximate each of these loss functions without switching codebases.
 
+## Intuition
+
+Our loss with α = 2 is equivalent to estimating a mean, and with α = 1 is similar to estimating a median and minimizing our loss with α = −∞ is equivalent to local mode-finding.
+
 ## Regression Loss Features
 - Unified Loss Function: A single implementation to capture diverse loss behaviors.
 - Configurable Parameters: Adjust weights and constants to shift between loss behaviors.
