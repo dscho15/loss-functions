@@ -47,4 +47,8 @@ output = loss(input_tensor, target_tensor)
 
 ### Graph
 
-![Logo](assets/image.png)
+![Intuition](assets/image.png)
+
+
+## References
+- Jonathan T. Barron. "A General and Adaptive Robust Loss Function"
