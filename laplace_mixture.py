@@ -2,15 +2,15 @@ import torch
 import einops
 import math
 
-class LaplaceLoss(torch.nn.Module):
+class MixtureOf2LaplaceLoss(torch.nn.Module):
     
     def __init__(self, reduce = 'mean'):
-        super(LaplaceLoss, self).__init__()
+        super(MixtureOf2LaplaceLoss, self).__init__()
         self.min = torch.tensor([-1])
         self.max = torch.tensor([3])
         self.reduce = reduce
 
-    def forward(self, y_pred: torch.Tensor, y_true: torch.Tensor):        
+    def forward(self, y_pred: torch.Tensor, y_true: torch.Tensor):     
         mu = y_pred[:, :3, :, :]
         alpha = y_pred[:, 3:5, :, :]
         beta = y_pred[:, 5:, :, :]
