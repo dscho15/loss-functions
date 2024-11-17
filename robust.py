@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+from torch.optim import AdamW
 
 
 class AlphaZeroLoss(torch.nn.Module):
@@ -66,23 +67,3 @@ class RobustGeneralLoss(torch.nn.Module):
             
     def forward(self, y_pred: torch.Tensor, y_true: torch.Tensor):
         return self.loss(y_pred, y_true)
-    
-    
-if __name__ == "__main__":
-    
-    c = 10
-    
-    y_pred = torch.randn(5, 2, 3) * 10
-    y_true = torch.randn(5, 2, 3) * 10
-    
-    loss = RobustGeneralLoss(loss_type = "none", alpha = 0, c = c)
-    print(loss(y_pred, y_true))
-    
-    loss = RobustGeneralLoss(loss_type = "none", alpha = 2, c = c)
-    print(loss(y_pred, y_true))
-    
-    loss = RobustGeneralLoss(loss_type = "none", alpha = 3, c = c)
-    print(loss(y_pred, y_true))
-    
-    loss = RobustGeneralLoss(loss_type = "none", alpha = np.inf, c = c)
-    print(loss(y_pred, y_true))
