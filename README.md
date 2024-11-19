@@ -11,11 +11,11 @@ This project introduces a generalized loss function designed to encompass a broa
 - Charbonnier/pseudo-Huber/L1-L2
 - L2
 
-Each of these functions has been widely adopted for tasks where balancing sensitivity to outliers and numerical stability is critical.
+Each of these functions can be adopted for tasks where balancing sensitivity to outliers and numerical stability is critical.
 
 ## Intuition
 
-Our loss function with α = 2 corresponds to estimating a mean, with α = 1 to estimating a median, and with α approaching −∞ to local mode-finding. In between, intermediate values of α provide a smooth transition between these types of averages in the estimation process.
+The loss robust loss function with α = 2 corresponds to estimating a mean, with α = 1 to estimating a median, and with α approaching −∞ to local mode-finding. In between, intermediate values of α provide a smooth transition between these types of averages in the estimation process.
 
 ![Intuition](assets/image.png)
 
